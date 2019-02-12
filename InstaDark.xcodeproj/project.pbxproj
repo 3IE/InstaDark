@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F944759722131A740025861D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F944759622131A740025861D /* AppDelegate.swift */; };
-		F944759922131A740025861D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F944759822131A740025861D /* ViewController.swift */; };
 		F944759C22131A740025861D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F944759A22131A740025861D /* Main.storyboard */; };
 		F944759E22131A750025861D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F944759D22131A750025861D /* Assets.xcassets */; };
 		F94475A122131A750025861D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F944759F22131A750025861D /* LaunchScreen.storyboard */; };
@@ -22,6 +21,13 @@
 		F9D6ECE22213226B007A39DD /* AlamofireObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F9D6ECD92213226B007A39DD /* AlamofireObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F9D6ECE32213226B007A39DD /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D6ECDA2213226B007A39DD /* AlamofireImage.framework */; };
 		F9D6ECE42213226B007A39DD /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F9D6ECDA2213226B007A39DD /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F9D6ECE72213234D007A39DD /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECE62213234D007A39DD /* HomeVC.swift */; };
+		F9D6ECEC22132840007A39DD /* ImageHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECEB22132840007A39DD /* ImageHomeCell.swift */; };
+		F9D6ECF422135500007A39DD /* ImageMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECF322135500007A39DD /* ImageMedia.swift */; };
+		F9D6ECF62213560D007A39DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECF52213560D007A39DD /* User.swift */; };
+		F9D6ECF822135B2E007A39DD /* ImageMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECF722135B2E007A39DD /* ImageMediaData.swift */; };
+		F9D6ECFC22135BE4007A39DD /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECFB22135BE4007A39DD /* RouterProtocol.swift */; };
+		F9D6ED0022135C98007A39DD /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECFF22135C98007A39DD /* BundleExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,7 +51,6 @@
 /* Begin PBXFileReference section */
 		F944759322131A740025861D /* InstaDark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaDark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F944759622131A740025861D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F944759822131A740025861D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F944759B22131A740025861D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F944759D22131A750025861D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F94475A022131A750025861D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +60,13 @@
 		F9D6ECD82213226B007A39DD /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		F9D6ECD92213226B007A39DD /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
 		F9D6ECDA2213226B007A39DD /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		F9D6ECE62213234D007A39DD /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		F9D6ECEB22132840007A39DD /* ImageHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHomeCell.swift; sourceTree = "<group>"; };
+		F9D6ECF322135500007A39DD /* ImageMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMedia.swift; sourceTree = "<group>"; };
+		F9D6ECF52213560D007A39DD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F9D6ECF722135B2E007A39DD /* ImageMediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaData.swift; sourceTree = "<group>"; };
+		F9D6ECFB22135BE4007A39DD /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		F9D6ECFF22135C98007A39DD /* BundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,11 +105,11 @@
 		F944759522131A740025861D /* InstaDark */ = {
 			isa = PBXGroup;
 			children = (
+				F9D6ECEF22133B04007A39DD /* DataAccess */,
+				F9D6ECF2221354C2007A39DD /* Model */,
 				F944759622131A740025861D /* AppDelegate.swift */,
-				F944759822131A740025861D /* ViewController.swift */,
-				F944759A22131A740025861D /* Main.storyboard */,
-				F944759D22131A750025861D /* Assets.xcassets */,
-				F944759F22131A750025861D /* LaunchScreen.storyboard */,
+				F9D6ECE822132355007A39DD /* Controllers */,
+				F9D6ECED2213291A007A39DD /* Views */,
 				F94475A222131A750025861D /* Info.plist */,
 			);
 			path = InstaDark;
@@ -113,6 +125,60 @@
 				F9D6ECD72213226B007A39DD /* SVProgressHUD.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9D6ECE822132355007A39DD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F9D6ECEE22132D2F007A39DD /* Cells */,
+				F9D6ECE62213234D007A39DD /* HomeVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F9D6ECED2213291A007A39DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F944759A22131A740025861D /* Main.storyboard */,
+				F944759D22131A750025861D /* Assets.xcassets */,
+				F944759F22131A750025861D /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F9D6ECEE22132D2F007A39DD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F9D6ECEB22132840007A39DD /* ImageHomeCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F9D6ECEF22133B04007A39DD /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				F9D6ECFA22135BA9007A39DD /* Utils */,
+				F9D6ECF722135B2E007A39DD /* ImageMediaData.swift */,
+			);
+			path = DataAccess;
+			sourceTree = "<group>";
+		};
+		F9D6ECF2221354C2007A39DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9D6ECF322135500007A39DD /* ImageMedia.swift */,
+				F9D6ECF52213560D007A39DD /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9D6ECFA22135BA9007A39DD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F9D6ECFF22135C98007A39DD /* BundleExtension.swift */,
+				F9D6ECFB22135BE4007A39DD /* RouterProtocol.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,8 +280,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F944759922131A740025861D /* ViewController.swift in Sources */,
+				F9D6ECF822135B2E007A39DD /* ImageMediaData.swift in Sources */,
+				F9D6ECFC22135BE4007A39DD /* RouterProtocol.swift in Sources */,
+				F9D6ECF422135500007A39DD /* ImageMedia.swift in Sources */,
+				F9D6ECEC22132840007A39DD /* ImageHomeCell.swift in Sources */,
+				F9D6ECF62213560D007A39DD /* User.swift in Sources */,
 				F944759722131A740025861D /* AppDelegate.swift in Sources */,
+				F9D6ECE72213234D007A39DD /* HomeVC.swift in Sources */,
+				F9D6ED0022135C98007A39DD /* BundleExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +440,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = InstaDark/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,6 +463,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = InstaDark/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

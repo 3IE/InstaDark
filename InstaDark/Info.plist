@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>kAPIBaseUrl</key>
+	<string>https://api.unsplash.com</string>
+	<key>kAPIKey</key>
+	<string>2c2aa6d56340d419758a58c9f8f3b4d99c0afff77eda4cd1d11a2c8d1bc071e7</string>
 </dict>
 </plist>
