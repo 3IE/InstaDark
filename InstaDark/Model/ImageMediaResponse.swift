@@ -9,17 +9,17 @@
 import Foundation
 import ObjectMapper
 
-struct ImageMedia {
+struct ImageMediaResponse {
     var id:String?
     var width:Int?
     var height:Int?
     var imageUrl:String?
     var user:User?
-    var description:String?
+    var descriptionImage:String?
     var likes:Int?
 }
 
-extension ImageMedia: Mappable {
+extension ImageMediaResponse: Mappable {
     init?(map: Map) {
         
     }
@@ -30,9 +30,7 @@ extension ImageMedia: Mappable {
         height <- map["height"]
         imageUrl <- map["urls.small"]
         user <- map["user"]
-        description <- map["description"]
+        descriptionImage <- map["description"]
         likes <- map["likes"]
     }
-    
-    
 }
