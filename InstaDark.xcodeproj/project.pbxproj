@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F916EF1922142D1B00BEBF58 /* ImageMediaBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = F916EF1822142D1B00BEBF58 /* ImageMediaBusiness.swift */; };
 		F944759722131A740025861D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F944759622131A740025861D /* AppDelegate.swift */; };
 		F944759C22131A740025861D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F944759A22131A740025861D /* Main.storyboard */; };
 		F944759E22131A750025861D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F944759D22131A750025861D /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F916EF1822142D1B00BEBF58 /* ImageMediaBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaBusiness.swift; sourceTree = "<group>"; };
 		F944759322131A740025861D /* InstaDark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaDark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F944759622131A740025861D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F944759B22131A740025861D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +87,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F916EF1722142CC200BEBF58 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				F916EF1822142D1B00BEBF58 /* ImageMediaBusiness.swift */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		F916EF1A2214328800BEBF58 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		F944758A22131A740025861D = {
 			isa = PBXGroup;
 			children = (
@@ -105,9 +122,11 @@
 		F944759522131A740025861D /* InstaDark */ = {
 			isa = PBXGroup;
 			children = (
+				F944759622131A740025861D /* AppDelegate.swift */,
 				F9D6ECEF22133B04007A39DD /* DataAccess */,
 				F9D6ECF2221354C2007A39DD /* Model */,
-				F944759622131A740025861D /* AppDelegate.swift */,
+				F916EF1722142CC200BEBF58 /* Business */,
+				F916EF1A2214328800BEBF58 /* Utils */,
 				F9D6ECE822132355007A39DD /* Controllers */,
 				F9D6ECED2213291A007A39DD /* Views */,
 				F94475A222131A750025861D /* Info.plist */,
@@ -281,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9D6ECF822135B2E007A39DD /* ImageMediaData.swift in Sources */,
+				F916EF1922142D1B00BEBF58 /* ImageMediaBusiness.swift in Sources */,
 				F9D6ECFC22135BE4007A39DD /* RouterProtocol.swift in Sources */,
 				F9D6ECF422135500007A39DD /* ImageMedia.swift in Sources */,
 				F9D6ECEC22132840007A39DD /* ImageHomeCell.swift in Sources */,

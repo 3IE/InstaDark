@@ -37,19 +37,20 @@ class ImageHomeCell: UITableViewCell {
         self.profileImage.image = nil
         self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
         self.likesLabel.text = "\(media.likes ?? 0) likes"
-        self.DescriptionTV.text = "@\(media.user?.username ?? "") \n\(media.description ?? "")"
+        self.DescriptionTV.text = "@\(media.user?.username ?? "") \(media.description != nil ? "\n" : "") \(media.description ?? "")"
         Alamofire.request(media.imageUrl ?? "").responseImage { response in
             if let image = response.result.value {
                 self.imageMedia.image = image
             }
         }
         
-        Alamofire.request(media.user?.profileImgUrl ?? "").responseImage { response in
-            if let image = response.result.value {
+        ImageBusiness.getImageFrom(path: media.user?.profileImgUrl ?? "") { (image) in
                 self.profileImage.image = image
-            }
+            
         }
-        
+        ImageBusiness.getImageFrom(path: media.imageUrl ?? "") { (image) in
+            self.imageMedia.image = image
+        }
         
     }
 

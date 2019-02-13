@@ -9,9 +9,11 @@
 import Foundation
 import Alamofire
 import AlamofireObjectMapper
+import UIKit
 
 private enum Router {
     case page(Int)
+    case image(String)
 }
 
 //MARK: - RouterProtocol
@@ -21,13 +23,18 @@ extension Router: RouterProtocol {
         switch self {
         case .page:
             return .get
+        case .image:
+            return .get
         }
+        
     }
     var path: String {
         switch self {
         case .page(let page):
             debugPrint("GET : \(Bundle.apiBaseUrl)/photos/?page=\(page)&per_page=30&client_id=\(Bundle.apiKey)")
-            return "\(Bundle.apiBaseUrl)/photos/?page=\(page)&per_page=30&client_id=\(Bundle.apiKey)"
+            return "\(Bundle.apiBaseUrl)/photos/?page=\(page)&per_page=30&client_id=\(Bundle.apiKey)&order_by=popular"
+        case .image(let pathOfImage):
+            return pathOfImage
         }
     }
 }
@@ -49,5 +56,15 @@ class ImageMediaData {
         Alamofire.request(Router.page(page)).responseArray(completionHandler: { (resp: DataResponse<[ImageMedia]>) in
           completed(resp.result.value)
         })
+    }
+}
+
+class ImageData {
+    static func getImageFrom(path: String, completed: @escaping (_ response: UIImage) -> Void ) {
+        Alamofire.request(Router.image(path)).responseImage { response in
+            if let image = response.result.value {
+                completed(image)
+            }
+        }
     }
 }

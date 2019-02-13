@@ -18,10 +18,14 @@ class HomeVC: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let logo = UIImage(named: "InstagramLogo")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = imageView
         addData()
     }
     func addData(){
-        ImageMediaData.getImageMediaPage(page: Feed.count / 30 + 1) { (med) in
+        ImageMediaBusiness.getImageMediaPage(Feed.count / 30 + 1) { (med) in
             debugPrint("Page: \(self.Feed.count / 30 + 1)")
             med?.forEach({ (m) in
                 self.Feed.append(m)
