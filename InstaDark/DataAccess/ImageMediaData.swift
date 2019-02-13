@@ -31,8 +31,7 @@ extension Router: RouterProtocol {
     var path: String {
         switch self {
         case .page(let page):
-            debugPrint("GET : \(Bundle.apiBaseUrl)/photos/?page=\(page)&per_page=30&client_id=\(Bundle.apiKey)")
-            return "\(Bundle.apiBaseUrl)/photos/?page=\(page)&per_page=30&client_id=\(Bundle.apiKey)&order_by=popular"
+            return "\(Bundle.apiBaseUrl)/photos/?page=\(page)&per_page=30&client_id=\(Bundle.apiKey)&order_by=latest"
         case .image(let pathOfImage):
             return pathOfImage
         }
@@ -52,9 +51,9 @@ extension Router: URLRequestConvertible {
 }
 
 class ImageMediaData {
-    static func getImageMediaPage(page: Int, completed: @escaping (_ response: [ImageMedia]?) -> Void) {
-        Alamofire.request(Router.page(page)).responseArray(completionHandler: { (resp: DataResponse<[ImageMedia]>) in
-          completed(resp.result.value)
+    static func getImageMediaPage(page: Int, completed: @escaping (_ response: [ImageMediaResponse]?) -> Void) {
+        Alamofire.request(Router.page(page)).responseArray(completionHandler: { (response: DataResponse<[ImageMediaResponse]>) in
+          completed(response.result.value)
         })
     }
 }

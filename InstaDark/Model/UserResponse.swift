@@ -9,13 +9,15 @@
 import Foundation
 import ObjectMapper
 
-struct User: Mappable {
+struct UserResponse {
     var id:String?
     var name:String?
     var profileImgUrl:String?
     var location:String?
     var username:String?
-    
+}
+
+extension UserResponse: Mappable {
     init?(map: Map) {
         
     }
@@ -27,6 +29,4 @@ struct User: Mappable {
         location <- map["location"]
         username <- map["username"]
     }
-    
-
 }

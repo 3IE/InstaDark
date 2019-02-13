@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+extension ImageMediaResponse {
+    func description() -> String {
+        return "@\(self.user?.username ?? "") \(self.descriptionImage != nil ? "\n" : "") \(self.descriptionImage ?? "")"
+    }
+}
+

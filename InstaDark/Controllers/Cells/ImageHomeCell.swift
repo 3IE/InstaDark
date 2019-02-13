@@ -21,37 +21,54 @@ class ImageHomeCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-    func setupCell(media: ImageMedia) {
+    func getUserProfileImage(user: UserResponse?) {
+        self.profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
+        guard let porfileImageUrl = user?.profileImgUrl else {
+            profileImage.image = UIImage(named: "emptyUserImage")
+            return
+        }
+        ImageBusiness.getImageFrom(path: porfileImageUrl) { (profileImage) in
+            self.profileImage.image = profileImage
+        }
+    }
+    
+    func getMediaImage(media: ImageMediaResponse) {
+        guard let mediaImageUrl = media.imageUrl else {
+            imageMedia.image = UIImage(named: "emptyImage")
+            return
+        }
+        ImageBusiness.getImageFrom(path: mediaImageUrl) { (mediaImage) in
+            self.imageMedia.image = mediaImage
+        }
+    }
+    
+    func getLikes(media: ImageMediaResponse) -> String {
+        guard let likes = media.likes else {
+            return "0 likes"
+        }
+        return "\(likes) likes"
+    }
+    
+    func setupCell(media: ImageMediaResponse) {
+        
         self.imageUsername.text = media.user?.name ?? ""
         self.imageUsernameDescription.text = media.user?.location ?? ""
+        
+        self.DescriptionTV.text = media.description()
+        
+        likesLabel.text = getLikes(media: media)
+        
         self.imageMedia.image = nil
+        getMediaImage(media: media)
+        
         self.profileImage.image = nil
-        self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2
-        self.likesLabel.text = "\(media.likes ?? 0) likes"
-        self.DescriptionTV.text = "@\(media.user?.username ?? "") \(media.description != nil ? "\n" : "") \(media.description ?? "")"
-        Alamofire.request(media.imageUrl ?? "").responseImage { response in
-            if let image = response.result.value {
-                self.imageMedia.image = image
-            }
-        }
-        
-        ImageBusiness.getImageFrom(path: media.user?.profileImgUrl ?? "") { (image) in
-                self.profileImage.image = image
-            
-        }
-        ImageBusiness.getImageFrom(path: media.imageUrl ?? "") { (image) in
-            self.imageMedia.image = image
-        }
-        
+        getUserProfileImage(user: media.user)
     }
 
 }

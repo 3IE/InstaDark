@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ImageMediaBusiness {
-    static func getImageMediaPage(_ page: Int, completed: @escaping (_ resp :[ImageMedia]?) -> Void) {
+    static func getImageMediaPage(_ page: Int, completed: @escaping ([ImageMediaResponse]?) -> Void) {
         ImageMediaData.getImageMediaPage(page: page) { (medias) in
             completed(medias)
         }
@@ -18,7 +18,7 @@ class ImageMediaBusiness {
 }
 
 class ImageBusiness {
-    static func getImageFrom(path: String, completed: @escaping (_ resp: UIImage) -> Void) {
+    static func getImageFrom(path: String, completed: @escaping (UIImage) -> Void) {
         ImageData.getImageFrom(path: path) { (image) in
             completed(image)
         }

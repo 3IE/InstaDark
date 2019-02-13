@@ -14,7 +14,7 @@ struct ImageMediaResponse {
     var width:Int?
     var height:Int?
     var imageUrl:String?
-    var user:User?
+    var user:UserResponse?
     var descriptionImage:String?
     var likes:Int?
 }

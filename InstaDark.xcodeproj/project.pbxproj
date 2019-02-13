@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F916EF1922142D1B00BEBF58 /* ImageMediaBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = F916EF1822142D1B00BEBF58 /* ImageMediaBusiness.swift */; };
+		F916EF1C22145CC200BEBF58 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F916EF1B22145CC200BEBF58 /* Utils.swift */; };
 		F944759722131A740025861D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F944759622131A740025861D /* AppDelegate.swift */; };
 		F944759C22131A740025861D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F944759A22131A740025861D /* Main.storyboard */; };
 		F944759E22131A750025861D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F944759D22131A750025861D /* Assets.xcassets */; };
@@ -24,8 +25,8 @@
 		F9D6ECE42213226B007A39DD /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F9D6ECDA2213226B007A39DD /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F9D6ECE72213234D007A39DD /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECE62213234D007A39DD /* HomeVC.swift */; };
 		F9D6ECEC22132840007A39DD /* ImageHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECEB22132840007A39DD /* ImageHomeCell.swift */; };
-		F9D6ECF422135500007A39DD /* ImageMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECF322135500007A39DD /* ImageMedia.swift */; };
-		F9D6ECF62213560D007A39DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECF52213560D007A39DD /* User.swift */; };
+		F9D6ECF422135500007A39DD /* ImageMediaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECF322135500007A39DD /* ImageMediaResponse.swift */; };
+		F9D6ECF62213560D007A39DD /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECF52213560D007A39DD /* UserResponse.swift */; };
 		F9D6ECF822135B2E007A39DD /* ImageMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECF722135B2E007A39DD /* ImageMediaData.swift */; };
 		F9D6ECFC22135BE4007A39DD /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECFB22135BE4007A39DD /* RouterProtocol.swift */; };
 		F9D6ED0022135C98007A39DD /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D6ECFF22135C98007A39DD /* BundleExtension.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		F916EF1822142D1B00BEBF58 /* ImageMediaBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaBusiness.swift; sourceTree = "<group>"; };
+		F916EF1B22145CC200BEBF58 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F944759322131A740025861D /* InstaDark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaDark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F944759622131A740025861D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F944759B22131A740025861D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,8 +66,8 @@
 		F9D6ECDA2213226B007A39DD /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		F9D6ECE62213234D007A39DD /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		F9D6ECEB22132840007A39DD /* ImageHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHomeCell.swift; sourceTree = "<group>"; };
-		F9D6ECF322135500007A39DD /* ImageMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMedia.swift; sourceTree = "<group>"; };
-		F9D6ECF52213560D007A39DD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F9D6ECF322135500007A39DD /* ImageMediaResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaResponse.swift; sourceTree = "<group>"; };
+		F9D6ECF52213560D007A39DD /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		F9D6ECF722135B2E007A39DD /* ImageMediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaData.swift; sourceTree = "<group>"; };
 		F9D6ECFB22135BE4007A39DD /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		F9D6ECFF22135C98007A39DD /* BundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		F916EF1A2214328800BEBF58 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F916EF1B22145CC200BEBF58 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -185,8 +188,8 @@
 		F9D6ECF2221354C2007A39DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F9D6ECF322135500007A39DD /* ImageMedia.swift */,
-				F9D6ECF52213560D007A39DD /* User.swift */,
+				F9D6ECF322135500007A39DD /* ImageMediaResponse.swift */,
+				F9D6ECF52213560D007A39DD /* UserResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,9 +305,10 @@
 				F9D6ECF822135B2E007A39DD /* ImageMediaData.swift in Sources */,
 				F916EF1922142D1B00BEBF58 /* ImageMediaBusiness.swift in Sources */,
 				F9D6ECFC22135BE4007A39DD /* RouterProtocol.swift in Sources */,
-				F9D6ECF422135500007A39DD /* ImageMedia.swift in Sources */,
+				F9D6ECF422135500007A39DD /* ImageMediaResponse.swift in Sources */,
 				F9D6ECEC22132840007A39DD /* ImageHomeCell.swift in Sources */,
-				F9D6ECF62213560D007A39DD /* User.swift in Sources */,
+				F916EF1C22145CC200BEBF58 /* Utils.swift in Sources */,
+				F9D6ECF62213560D007A39DD /* UserResponse.swift in Sources */,
 				F944759722131A740025861D /* AppDelegate.swift in Sources */,
 				F9D6ECE72213234D007A39DD /* HomeVC.swift in Sources */,
 				F9D6ED0022135C98007A39DD /* BundleExtension.swift in Sources */,
