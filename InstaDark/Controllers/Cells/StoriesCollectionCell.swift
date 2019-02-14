@@ -8,12 +8,15 @@
 
 import UIKit
 
-class StoriesCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+class StoriesCollectionCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+   
+    var users = [UserResponse]()
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return users.count
     }
-    
-    var users = [UserResponse]()
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storieCell", for: indexPath) as! StorieCell
@@ -22,14 +25,11 @@ class StoriesCell: UITableViewCell, UICollectionViewDataSource, UICollectionView
         cell.setUpView(user: users[indexPath.item])
         return cell
     }
-
-    @IBOutlet weak var collectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.delegate = self
         collectionView.dataSource = self
-        
     }
 
     func setStories(_ recievedUsers:[UserResponse]) {
@@ -40,5 +40,4 @@ class StoriesCell: UITableViewCell, UICollectionViewDataSource, UICollectionView
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
 }

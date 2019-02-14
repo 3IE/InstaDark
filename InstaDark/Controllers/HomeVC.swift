@@ -10,11 +10,8 @@ import UIKit
 
 class HomeVC: UITableViewController {
     
-    
-    
     var feedList = [ImageMediaResponse]()
     
- 
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,20 +19,22 @@ class HomeVC: UITableViewController {
         let imageView = UIImageView(image:logo)
         imageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = imageView
-        
-        GetData()
+        getData()
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(getData), for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
     
-    func GetData(fromPage page: Int = 0){
-        
-        ImageMediaBusiness.getImageMediaPage(page) { (imageMediaList) in
+    @objc func getData(fromPage page: Int = 0) {
+        ImageMediaBusiness.getDataForPage(page) { (imageMediaList) in
             imageMediaList?.forEach({ (imageMedia) in
                 self.feedList.append(imageMedia)
             })
             self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
         }
-
     }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -48,7 +47,7 @@ class HomeVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "storiesCell", for: indexPath) as! StoriesCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "storiesCollectionCell", for: indexPath) as! StoriesCollectionCell
             var users = [UserResponse]()
             feedList.forEach { (mediaImage) in
                 users.append(mediaImage.user!)
@@ -60,7 +59,7 @@ class HomeVC: UITableViewController {
         cell.setupCell(media: feedList[indexPath.row])
         if indexPath.row == feedList.count - 3 {
             // Adds next page images to feedList
-            GetData(fromPage:feedList.count / 30 + 1)
+            getData(fromPage:feedList.count / 30 + 1)
         }
         return cell
     }

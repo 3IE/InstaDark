@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F91371DC221581530002F5E8 /* StoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91371DB221581530002F5E8 /* StoriesCell.swift */; };
+		F91371DC221581530002F5E8 /* StoriesCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91371DB221581530002F5E8 /* StoriesCollectionCell.swift */; };
 		F91371DE2215838B0002F5E8 /* StorieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91371DD2215838B0002F5E8 /* StorieCell.swift */; };
+		F91371E02215AF810002F5E8 /* LikeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91371DF2215AF810002F5E8 /* LikeState.swift */; };
 		F916EF1922142D1B00BEBF58 /* ImageMediaBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = F916EF1822142D1B00BEBF58 /* ImageMediaBusiness.swift */; };
 		F916EF1C22145CC200BEBF58 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F916EF1B22145CC200BEBF58 /* Utils.swift */; };
 		F944759722131A740025861D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F944759622131A740025861D /* AppDelegate.swift */; };
@@ -53,8 +54,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F91371DB221581530002F5E8 /* StoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCell.swift; sourceTree = "<group>"; };
+		F91371DB221581530002F5E8 /* StoriesCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesCollectionCell.swift; sourceTree = "<group>"; };
 		F91371DD2215838B0002F5E8 /* StorieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorieCell.swift; sourceTree = "<group>"; };
+		F91371DF2215AF810002F5E8 /* LikeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeState.swift; sourceTree = "<group>"; };
 		F916EF1822142D1B00BEBF58 /* ImageMediaBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaBusiness.swift; sourceTree = "<group>"; };
 		F916EF1B22145CC200BEBF58 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F944759322131A740025861D /* InstaDark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaDark.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				F916EF1B22145CC200BEBF58 /* Utils.swift */,
+				F91371DF2215AF810002F5E8 /* LikeState.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -176,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				F9D6ECEB22132840007A39DD /* ImageHomeCell.swift */,
-				F91371DB221581530002F5E8 /* StoriesCell.swift */,
+				F91371DB221581530002F5E8 /* StoriesCollectionCell.swift */,
 				F91371DD2215838B0002F5E8 /* StorieCell.swift */,
 			);
 			path = Cells;
@@ -311,12 +314,13 @@
 				F9D6ECF822135B2E007A39DD /* ImageMediaData.swift in Sources */,
 				F916EF1922142D1B00BEBF58 /* ImageMediaBusiness.swift in Sources */,
 				F9D6ECFC22135BE4007A39DD /* RouterProtocol.swift in Sources */,
-				F91371DC221581530002F5E8 /* StoriesCell.swift in Sources */,
+				F91371DC221581530002F5E8 /* StoriesCollectionCell.swift in Sources */,
 				F9D6ECF422135500007A39DD /* ImageMediaResponse.swift in Sources */,
 				F91371DE2215838B0002F5E8 /* StorieCell.swift in Sources */,
 				F9D6ECEC22132840007A39DD /* ImageHomeCell.swift in Sources */,
 				F916EF1C22145CC200BEBF58 /* Utils.swift in Sources */,
 				F9D6ECF62213560D007A39DD /* UserResponse.swift in Sources */,
+				F91371E02215AF810002F5E8 /* LikeState.swift in Sources */,
 				F944759722131A740025861D /* AppDelegate.swift in Sources */,
 				F9D6ECE72213234D007A39DD /* HomeVC.swift in Sources */,
 				F9D6ED0022135C98007A39DD /* BundleExtension.swift in Sources */,

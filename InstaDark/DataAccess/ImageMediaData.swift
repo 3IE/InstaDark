@@ -12,8 +12,8 @@ import AlamofireObjectMapper
 import UIKit
 
 private enum Router {
-    case getImageMediaPage(Int)
-    case getImage(String)
+    case getDataForPage(Int)
+    case getImageFromUrl(String)
 }
 
 //MARK: - RouterProtocol
@@ -21,18 +21,18 @@ private enum Router {
 extension Router: RouterProtocol {
     var method: HTTPMethod {
         switch self {
-        case .getImageMediaPage:
+        case .getDataForPage:
             return .get
-        case .getImage:
+        case .getImageFromUrl:
             return .get
         }
         
     }
     var path: String {
         switch self {
-        case .getImageMediaPage(let page):
+        case .getDataForPage(let page):
             return "\(Bundle.apiBaseUrl)/photos/?page=\(page)&per_page=30&client_id=\(Bundle.apiKey)&order_by=latest"
-        case .getImage(let pathOfImage):
+        case .getImageFromUrl(let pathOfImage):
             return pathOfImage
         }
     }
@@ -51,16 +51,16 @@ extension Router: URLRequestConvertible {
 }
 
 class ImageMediaData {
-    static func getImageMediaPage(page: Int, completed: @escaping (_ response: [ImageMediaResponse]?) -> Void) {
-        Alamofire.request(Router.getImageMediaPage(page)).responseArray(completionHandler: { (response: DataResponse<[ImageMediaResponse]>) in
+    static func getDataForPage(page: Int, completed: @escaping (_ response: [ImageMediaResponse]?) -> Void) {
+        Alamofire.request(Router.getDataForPage(page)).responseArray(completionHandler: { (response: DataResponse<[ImageMediaResponse]>) in
           completed(response.result.value)
         })
     }
 }
 
 class ImageData {
-    static func getImageFrom(path: String, completed: @escaping (_ response: UIImage) -> Void ) {
-        Alamofire.request(Router.getImage(path)).responseImage { response in
+    static func getImageFromUrl(_ url: String, completed: @escaping (_ response: UIImage) -> Void ) {
+        Alamofire.request(Router.getImageFromUrl(url)).responseImage { response in
             if let image = response.result.value {
                 completed(image)
             }

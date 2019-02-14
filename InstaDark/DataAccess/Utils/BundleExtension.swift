@@ -22,14 +22,6 @@ extension Bundle {
         return _apiBaseUrl!
     }
     
-    /// returns the API base url that is shared by your web services
-    static var secondApiBaseUrl: String {
-        if (_secondApiBaseUrl == nil) {
-            _secondApiBaseUrl = Bundle.main.object(forInfoDictionaryKey: "kSecondAPIBaseUrl") as? String ?? ""
-        }
-        return _secondApiBaseUrl!
-    }
-    
     /// returns the API key shared by your web services
     static var apiKey: String {
         if (_apiKey == nil) {

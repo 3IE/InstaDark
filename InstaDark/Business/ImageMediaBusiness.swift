@@ -10,16 +10,16 @@ import Foundation
 import UIKit
 
 class ImageMediaBusiness {
-    static func getImageMediaPage(_ page: Int, completed: @escaping ([ImageMediaResponse]?) -> Void) {
-        ImageMediaData.getImageMediaPage(page: page) { (medias) in
+    static func getDataForPage(_ page: Int, completed: @escaping ([ImageMediaResponse]?) -> Void) {
+        ImageMediaData.getDataForPage(page: page) { (medias) in
             completed(medias)
         }
     }
 }
 
 class ImageBusiness {
-    static func getImageFrom(path: String, completed: @escaping (UIImage) -> Void) {
-        ImageData.getImageFrom(path: path) { (image) in
+    static func getImageFromUrl(_ url: String, completed: @escaping (UIImage) -> Void) {
+        ImageData.getImageFromUrl(url) { (image) in
             completed(image)
         }
     }

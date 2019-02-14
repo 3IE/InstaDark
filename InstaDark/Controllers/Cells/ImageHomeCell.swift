@@ -12,18 +12,6 @@ import AlamofireImage
 
 class ImageHomeCell: UITableViewCell {
     
-    enum likeBtnState:String {
-        case like
-        case liked
-        mutating func switchLike() {
-            if self == .like {
-                self = .liked
-            } else {
-                self = .like
-            }
-        }
-    }
-    
     @IBOutlet weak var BigLikImage: UIImageView!
     @IBOutlet weak var bigLikeHeight: NSLayoutConstraint!
     @IBOutlet weak var bigLikeWidth: NSLayoutConstraint!
@@ -38,7 +26,8 @@ class ImageHomeCell: UITableViewCell {
     @IBOutlet weak var DescriptionTV: UITextView!
     @IBOutlet weak var likeBtnHeight: NSLayoutConstraint!
     @IBOutlet weak var likeBtnWidth: NSLayoutConstraint!
-    var likeBtnStatus: likeBtnState = .like
+    
+    var likeBtnStatus: LikeState = .like
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,7 +43,7 @@ class ImageHomeCell: UITableViewCell {
             profileImage.image = UIImage(named: "emptyUserImage")
             return
         }
-        ImageBusiness.getImageFrom(path: porfileImageUrl) { (profileImage) in
+        ImageBusiness.getImageFromUrl(porfileImageUrl) { (profileImage) in
             self.profileImage.image = profileImage
         }
     }
@@ -64,20 +53,17 @@ class ImageHomeCell: UITableViewCell {
             imageMedia.image = UIImage(named: "emptyImage")
             return
         }
-        ImageBusiness.getImageFrom(path: mediaImageUrl) { (mediaImage) in
+        ImageBusiness.getImageFromUrl(mediaImageUrl) { (mediaImage) in
             self.imageMedia.image = mediaImage
         }
     }
     
     func getLikes(media: ImageMediaResponse) -> String {
-        guard let likes = media.likes else {
-            return "0 likes"
-        }
+        guard let likes = media.likes else { return "0 likes" }
         return "\(likes) likes"
     }
     
     func setupCell(media: ImageMediaResponse) {
-        
         self.imageUsername.text = media.user?.name ?? ""
         self.imageUsernameDescription.text = media.user?.location ?? "Photographer"
         
@@ -118,7 +104,6 @@ class ImageHomeCell: UITableViewCell {
                 self.BigLikImage.isHidden = true
             }
         }
-        
     }
     
     @IBAction func didTapLikeBtn(_ sender: Any) {

@@ -18,7 +18,7 @@ class StorieCell: UICollectionViewCell {
             profileImage.image = UIImage(named: "emptyUserImage")
             return
         }
-        ImageBusiness.getImageFrom(path: porfileImageUrl) { (profileImage) in
+        ImageBusiness.getImageFromUrl(porfileImageUrl) { (profileImage) in
             self.profileImage.image = profileImage
         }
     }
