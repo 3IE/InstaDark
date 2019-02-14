@@ -44,6 +44,16 @@ class HomeVC: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feedList.count + 1
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PresentStory" {
+            let storyPresenter = segue.destination as! StoriesVC
+            let collectionView = (tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? StoriesCollectionCell)?.collectionView
+            let indexPath = collectionView?.indexPath(for: sender as! StorieCell)
+            
+            storyPresenter.setUpStory(user: self.feedList[indexPath?.item ?? 0].user)
+        }
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
