@@ -24,6 +24,9 @@ class ImageHomeCell: UITableViewCell {
         }
     }
     
+    @IBOutlet weak var BigLikImage: UIImageView!
+    @IBOutlet weak var bigLikeHeight: NSLayoutConstraint!
+    @IBOutlet weak var bigLikeWidth: NSLayoutConstraint!
     @IBOutlet weak var likeBtnTop: NSLayoutConstraint!
     @IBOutlet weak var likeBtnLeft: NSLayoutConstraint!
     @IBOutlet weak var likeBtn: UIButton!
@@ -91,8 +94,33 @@ class ImageHomeCell: UITableViewCell {
         likeBtn.imageView?.contentMode = .scaleAspectFit
         likeBtnStatus = .like
         likeBtn.setBackgroundImage(UIImage(named: likeBtnStatus.rawValue), for: .normal)
+        
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(didTapImage))
+        doubleTap.numberOfTapsRequired = 2
+        
+        self.imageMedia.addGestureRecognizer(doubleTap)
     }
 
+    @objc func didTapImage(_ sender:Any) {
+        self.likeBtnStatus.switchLike()
+        likeBtn.setBackgroundImage(UIImage(named: likeBtnStatus.rawValue), for: .normal)
+        BigLikImage.isHidden = false
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.bigLikeWidth.constant += 40
+            self.bigLikeHeight.constant += 40
+            self.layoutIfNeeded()
+        }) { (animated) in
+            UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 1, options: .curveEaseIn, animations: {
+                self.bigLikeWidth.constant -= 40
+                self.bigLikeHeight.constant -= 40
+                self.layoutIfNeeded()
+            }) { (animated) in
+                self.BigLikImage.isHidden = true
+            }
+        }
+        
+    }
+    
     @IBAction func didTapLikeBtn(_ sender: Any) {
         self.likeBtnStatus.switchLike()
         likeBtn.setBackgroundImage(UIImage(named: likeBtnStatus.rawValue), for: .normal)
@@ -104,7 +132,7 @@ class ImageHomeCell: UITableViewCell {
             self.likeBtnLeft.constant -= 2
             self.layoutIfNeeded()
         }) { (animated) in
-            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 0, options: .curveEaseIn, animations: {
                 self.likeBtnWidth.constant -= 4
                 self.likeBtnHeight.constant -= 4
                 self.likeBtnTop.constant += 2
@@ -113,5 +141,4 @@ class ImageHomeCell: UITableViewCell {
             })
         }
     }
-    
 }

@@ -93,11 +93,18 @@
                                                 <constraint firstAttribute="height" constant="54" id="eyW-Lm-IZe"/>
                                             </constraints>
                                         </view>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="SampleImage" translatesAutoresizingMaskIntoConstraints="NO" id="uhk-MC-saQ">
+                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="SampleImage" translatesAutoresizingMaskIntoConstraints="NO" id="uhk-MC-saQ">
                                             <rect key="frame" x="0.0" y="52" width="375" height="320"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="320" id="KVI-0k-plq"/>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="900" id="WCY-fK-pKo"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BigLike" translatesAutoresizingMaskIntoConstraints="NO" id="LoM-EO-X89">
+                                            <rect key="frame" x="103" y="116.5" width="169" height="191"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="169" id="3Lq-hE-kgp"/>
+                                                <constraint firstAttribute="height" constant="191" id="aZX-jB-jLK"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
@@ -118,13 +125,18 @@
                                         <constraint firstItem="mlu-8a-Zos" firstAttribute="top" secondItem="4rg-BS-F6f" secondAttribute="top" constant="6" id="kn8-5a-1FQ"/>
                                         <constraint firstItem="84e-bf-iM9" firstAttribute="leading" secondItem="4rg-BS-F6f" secondAttribute="leading" id="loE-7z-wh5"/>
                                         <constraint firstAttribute="trailing" secondItem="84e-bf-iM9" secondAttribute="trailing" id="stm-qG-Blw"/>
+                                        <constraint firstItem="LoM-EO-X89" firstAttribute="centerY" secondItem="uhk-MC-saQ" secondAttribute="centerY" id="tcn-lC-R1e"/>
                                         <constraint firstAttribute="trailing" secondItem="ax8-TD-NP5" secondAttribute="trailing" constant="9" id="teO-Os-n0n"/>
+                                        <constraint firstItem="LoM-EO-X89" firstAttribute="centerX" secondItem="uhk-MC-saQ" secondAttribute="centerX" id="tyy-AK-o2s"/>
                                         <constraint firstItem="LjM-SM-J6F" firstAttribute="leading" secondItem="4rg-BS-F6f" secondAttribute="leading" constant="8" id="uNk-4j-5DU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <outlet property="BigLikImage" destination="LoM-EO-X89" id="u2c-PJ-qsl"/>
                                     <outlet property="DescriptionTV" destination="LjM-SM-J6F" id="hoE-Pb-teb"/>
+                                    <outlet property="bigLikeHeight" destination="aZX-jB-jLK" id="QrR-B3-IlA"/>
+                                    <outlet property="bigLikeWidth" destination="3Lq-hE-kgp" id="NI2-PG-dQL"/>
                                     <outlet property="imageMedia" destination="uhk-MC-saQ" id="t9B-6J-Cam"/>
                                     <outlet property="imageUsername" destination="ax8-TD-NP5" id="n27-tq-8rT"/>
                                     <outlet property="imageUsernameDescription" destination="QQo-am-kpa" id="LKN-Gz-lxE"/>
@@ -191,6 +203,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BigLike" width="227" height="213"/>
         <image name="SampleImage" width="5170" height="6691"/>
         <image name="home" width="32" height="32"/>
         <image name="like" width="25" height="23"/>
