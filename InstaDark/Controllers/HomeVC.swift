@@ -43,10 +43,19 @@ class HomeVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return feedList.count
+        return feedList.count + 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "storiesCell", for: indexPath) as! StoriesCell
+            var users = [UserResponse]()
+            feedList.forEach { (mediaImage) in
+                users.append(mediaImage.user!)
+            }
+            cell.setStories(users)
+            return cell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as! ImageHomeCell
         cell.setupCell(media: feedList[indexPath.row])
         if indexPath.row == feedList.count - 3 {

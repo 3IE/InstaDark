@@ -25,7 +25,7 @@ extension UserResponse: Mappable {
     mutating func mapping(map: Map) {
         id <- map["id"]
         name <- map["name"]
-        profileImgUrl <- map["profile_image.medium"]
+        profileImgUrl <- map["profile_image.large"]
         location <- map["location"]
         username <- map["username"]
     }

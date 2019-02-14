@@ -79,7 +79,7 @@ class ImageHomeCell: UITableViewCell {
     func setupCell(media: ImageMediaResponse) {
         
         self.imageUsername.text = media.user?.name ?? ""
-        self.imageUsernameDescription.text = media.user?.location ?? ""
+        self.imageUsernameDescription.text = media.user?.location ?? "Photographer"
         
         self.DescriptionTV.text = media.description()
         

@@ -12,8 +12,8 @@ import AlamofireObjectMapper
 import UIKit
 
 private enum Router {
-    case page(Int)
-    case image(String)
+    case getImageMediaPage(Int)
+    case getImage(String)
 }
 
 //MARK: - RouterProtocol
@@ -21,18 +21,18 @@ private enum Router {
 extension Router: RouterProtocol {
     var method: HTTPMethod {
         switch self {
-        case .page:
+        case .getImageMediaPage:
             return .get
-        case .image:
+        case .getImage:
             return .get
         }
         
     }
     var path: String {
         switch self {
-        case .page(let page):
+        case .getImageMediaPage(let page):
             return "\(Bundle.apiBaseUrl)/photos/?page=\(page)&per_page=30&client_id=\(Bundle.apiKey)&order_by=latest"
-        case .image(let pathOfImage):
+        case .getImage(let pathOfImage):
             return pathOfImage
         }
     }
@@ -52,7 +52,7 @@ extension Router: URLRequestConvertible {
 
 class ImageMediaData {
     static func getImageMediaPage(page: Int, completed: @escaping (_ response: [ImageMediaResponse]?) -> Void) {
-        Alamofire.request(Router.page(page)).responseArray(completionHandler: { (response: DataResponse<[ImageMediaResponse]>) in
+        Alamofire.request(Router.getImageMediaPage(page)).responseArray(completionHandler: { (response: DataResponse<[ImageMediaResponse]>) in
           completed(response.result.value)
         })
     }
@@ -60,7 +60,7 @@ class ImageMediaData {
 
 class ImageData {
     static func getImageFrom(path: String, completed: @escaping (_ response: UIImage) -> Void ) {
-        Alamofire.request(Router.image(path)).responseImage { response in
+        Alamofire.request(Router.getImage(path)).responseImage { response in
             if let image = response.result.value {
                 completed(image)
             }
