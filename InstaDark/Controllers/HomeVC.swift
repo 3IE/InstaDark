@@ -10,8 +10,11 @@ import UIKit
 
 class HomeVC: UITableViewController {
     
+    
+    
     var feedList = [ImageMediaResponse]()
     
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,5 +55,5 @@ class HomeVC: UITableViewController {
         }
         return cell
     }
-
+    
 }
